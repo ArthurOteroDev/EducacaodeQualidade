@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto ODS 4 | Plataforma de Educação e Empregabilidade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black font-sans min-h-screen flex flex-col justify-between">
+
+  <!-- Acessibilidade: Atalho para pular para o conteúdo principal -->
+  <a href="#conteudo-principal" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-black focus:text-white z-50">
+    Pular para o conteúdo principal
+  </a>
+
+  <!-- NAVEGAÇÃO -->
+  <header class="flex justify-between items-center p-4 border-b-2 border-black">
+    <div class="font-bold text-xl">Educa+ (ODS 4)</div>
+    <nav class="flex gap-4 font-bold" aria-label="Navegação principal">
+      <button type="button" onclick="mostrarPagina('home')" class="hover:underline focus:outline-none focus:ring-2 focus:ring-black">
+        Home
+      </button>
+      <button type="button" onclick="mostrarPagina('curriculo')" class="hover:underline focus:outline-none focus:ring-2 focus:ring-black">
+        Gerador de Currículo
+      </button>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="conteudo-principal" class="flex-grow">
+    
+    <!-- TELA 1: HOME -->
+    <section id="home" class="max-w-5xl mx-auto mt-12 p-4 block" aria-labelledby="titulo-home">
+      <div class="text-center mb-16">
+        <span class="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">
+          Projeto ODS 4
+        </span>
+        <h1 id="titulo-home" class="text-4xl font-bold mt-6 mb-4">
+          Plataforma de Educação e Empregabilidade
+        </h1>
+        <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+          Sistema focado em conectar estudantes às vagas de entrada no mercado através de qualificação e geração de currículos.
+        </p>
+        <button type="button" onclick="mostrarPagina('curriculo')" class="bg-black text-white px-6 py-3 font-bold hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+          Acessar Gerador de Currículo
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <article class="border-2 border-black p-6">
+          <h2 class="font-bold text-lg mb-2">Módulo de Currículos</h2>
+          <p class="text-sm text-gray-700">Interface para preenchimento de dados e exportação em formato padrão.</p>
+        </article>
+        <article class="border-2 border-black p-6">
+          <h2 class="font-bold text-lg mb-2">Trilhas de Estudo</h2>
+          <p class="text-sm text-gray-700">Base de conhecimentos com conteúdos focados no mercado de trabalho.</p>
+        </article>
+        <article class="border-2 border-black p-6">
+          <h2 class="font-bold text-lg mb-2">Treinamento</h2>
+          <p class="text-sm text-gray-700">Módulo de simulação de entrevistas e perguntas frequentes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TELA 2: CURRÍCULO -->
+    <section id="curriculo" class="max-w-6xl mx-auto mt-8 p-4 hidden" aria-labelledby="titulo-curriculo">
+      <div class="mb-8">
+        <h1 id="titulo-curriculo" class="text-3xl font-bold mb-2">Gerador de Currículo</h1>
+        <p class="text-gray-600">Preencha os campos abaixo. O frontend é estático nesta versão (Sprint 1).</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Formulário -->
+        <div class="border-2 border-black p-6">
+          <h2 class="font-bold text-xl mb-6 border-b-2 border-black pb-2">Dados do Candidato</h2>
+          <form id="form-curriculo">
+            <div class="mb-5">
+              <label for="nome-completo" class="block font-bold mb-2 text-sm">Nome Completo</label>
+              <input id="nome-completo" type="text" class="w-full border-2 border-black p-2 outline-none focus:bg-gray-100 focus:ring-2 focus:ring-black" placeholder="Insira o nome">
+            </div>
+            
+            <div class="mb-5">
+              <label for="objetivo-profissional" class="block font-bold mb-2 text-sm">Objetivo Profissional</label>
+              <textarea id="objetivo-profissional" rows="4" class="w-full border-2 border-black p-2 outline-none focus:bg-gray-100 focus:ring-2 focus:ring-black" placeholder="Resumo do objetivo..."></textarea>
+            </div>
+
+            <div class="flex gap-4 mt-8">
+              <button type="reset" class="border-2 border-black px-4 py-2 font-bold w-1/3 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-black">
+                Limpar
+              </button>
+              <button type="submit" class="bg-black text-white px-4 py-2 font-bold w-2/3 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                Gerar PDF
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Preview Mockup Estático -->
+        <div class="border-2 border-black p-8 h-fit" aria-live="polite">
+          <h2 class="text-3xl font-bold mb-2 uppercase">Nome do Candidato</h2>
+          <hr class="border-black border-t-2 mb-6">
+          
+          <div class="mb-6">
+            <h3 class="font-bold uppercase tracking-widest text-sm mb-2">Objetivo Profissional</h3>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              [O texto preenchido no formulário aparecerá renderizado aqui nas próximas Sprints.]
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="border-t-2 border-black p-4 mt-12 text-center text-sm">
+    <p>&copy; 2026 Projeto ODS 4 - Educação de Qualidade. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- LÓGICA DE NAVEGAÇÃO -->
+  <script>
+    function mostrarPagina(idPagina) {
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('curriculo').classList.add('hidden');
+      
+      const paginaAtiva = document.getElementById(idPagina);
+      paginaAtiva.classList.remove('hidden');
+      paginaAtiva.focus();
+    }
+  </script>
+
+</body>
+</html>
