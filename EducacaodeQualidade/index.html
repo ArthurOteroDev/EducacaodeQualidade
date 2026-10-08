@@ -1,114 +1,101 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Educação de Qualidade - ODS 4</title>
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1d4ed8',
-            secondary: '#0f172a',
-          }
-        }
-      }
-    }
-  </script>
+  <title>PORTAL | Educação de Qualidade - ODS 4</title>
+  <meta name="description" content="Portal Educa+: cursos gratuitos, gerador de currículo e comunidade, baseado na ODS 4 da ONU.">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased">
+<body>
 
-  <!-- ===================== NAV BAR / CABEÇALHO ===================== -->
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-      <div class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-black text-white shadow-md">
-          4
-        </div>
-        <div>
-          <h1 class="text-lg font-bold leading-none text-slate-900">Educa+</h1>
-          <span class="text-xs font-medium text-slate-500">ODS 4 - Educação de Qualidade</span>
-        </div>
-      </div>
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="cabecalho-portal">
+    <div class="container cabecalho-conteudo">
 
-      <nav class="hidden items-center gap-8 md:flex">
-        <a href="#home" class="text-sm font-semibold text-slate-600 transition-colors hover:text-primary">Início</a>
-        <a href="#educacao" class="text-sm font-semibold text-slate-600 transition-colors hover:text-primary">Cursos &amp; Oportunidades</a>
-        <a href="#empregabilidade" class="text-sm font-semibold text-slate-600 transition-colors hover:text-primary">Gerador de Currículo</a>
-        <a href="#comunidade" class="text-sm font-semibold text-slate-600 transition-colors hover:text-primary">Comunidade</a>
+      <a href="#secao-apresentacao" class="marca-portal" aria-label="Educa+, voltar para o início">
+        <span class="marca-simbolo" aria-hidden="true">4</span>
+        <span>
+          <span class="marca-nome">Portal Educa</span>
+          <span class="marca-descricao">ODS 4 - Educação de Qualidade</span>
+        </span>
+      </a>
+
+      <nav class="menu-principal" aria-label="Menu principal">
+        <a href="#secao-apresentacao" class="menu-link">Início</a>
+        <a href="#secao-cursos" class="menu-link">Cursos &amp; Oportunidades</a>
+        <a href="#secao-curriculo" class="menu-link">Gerador de Currículo</a>
+        <a href="#secao-comunidade" class="menu-link">Comunidade</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <button type="button" class="rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100">
-          Entrar
-        </button>
-      </div>
+      <!-- FUTURO (JavaScript): este botão ainda não executa nenhuma ação -->
+      <button type="button" class="botao-entrar">Entrar</button>
+
     </div>
   </header>
 
-  <main id="conteudo">
+  <main id="conteudo-principal">
 
-    <!-- ===================== BANNER / HERO ===================== -->
-    <section id="home" class="py-12 md:py-20">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <div class="rounded-3xl bg-gradient-to-r from-blue-900 via-primary to-blue-700 p-8 text-white shadow-2xl md:p-12">
-          <div class="max-w-2xl">
-            <span class="inline-block rounded-full bg-blue-500/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-100">
-              ODS 4: Educação de Qualidade
-            </span>
-            <h2 class="mt-4 text-3xl font-black sm:text-5xl">
-              Transformando futuros através do conhecimento acessível.
-            </h2>
-            <p class="mt-4 text-blue-100 sm:text-lg">
+    <!-- ===================== INÍCIO / APRESENTAÇÃO ===================== -->
+    <section id="secao-apresentacao" class="secao-apresentacao">
+      <div class="container">
+
+        <!-- Banner de apresentação -->
+        <div class="banner-apresentacao">
+          <div class="banner-conteudo">
+            <span class="banner-etiqueta">ODS 4: Educação de Qualidade</span>
+            <h1 class="banner-titulo">Transformando futuros através do conhecimento acessível.</h1>
+            <p class="banner-texto">
               Assegurar a educação inclusiva, equitativa e de qualidade, promovendo oportunidades de aprendizagem ao longo da vida para todos.
             </p>
-            <div class="mt-8 flex flex-wrap gap-4">
-              <a href="#educacao" class="rounded-xl bg-white px-6 py-3 font-bold text-primary shadow-lg transition-transform hover:scale-105">
-                Ver Cursos
-              </a>
-              <a href="#empregabilidade" class="rounded-xl border border-white/40 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm hover:bg-white/20">
-                Criar Currículo
-              </a>
+            <div class="banner-botoes">
+              <a href="#secao-cursos" class="botao-banner-principal">Ver Cursos</a>
+              <a href="#secao-curriculo" class="botao-banner-secundario">Criar Currículo</a>
             </div>
           </div>
         </div>
 
-        <!-- Cards Rápidos de Navegação -->
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900">Cursos Gratuitos</h3>
-            <p class="mt-2 text-sm text-slate-600">Acesse opções de capacitação em tecnologia, idiomas e gestão.</p>
-            <a href="#educacao" class="mt-4 inline-block text-sm font-semibold text-primary">Explorar catálogo &rarr;</a>
+        <!-- Cartões de navegação rápida -->
+        <div id="atalhos-portal" class="grade-cartoes atalhos-portal">
+
+          <article class="cartao cartao-atalho">
+            <h2 class="cartao-atalho-titulo">Cursos Gratuitos</h2>
+            <p class="cartao-atalho-texto">Acesse opções de capacitação em tecnologia, idiomas e gestão.</p>
+            <a href="#secao-cursos" class="cartao-atalho-link">Explorar catálogo &rarr;</a>
           </article>
 
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900">Empregabilidade</h3>
-            <p class="mt-2 text-sm text-slate-600">Monte um currículo profissional em poucos passos pronto para impressão.</p>
-            <a href="#empregabilidade" class="mt-4 inline-block text-sm font-semibold text-primary">Gerar currículo &rarr;</a>
+          <article class="cartao cartao-atalho">
+            <h2 class="cartao-atalho-titulo">Empregabilidade</h2>
+            <p class="cartao-atalho-texto">Monte um currículo profissional em poucos passos pronto para impressão.</p>
+            <a href="#secao-curriculo" class="cartao-atalho-link">Gerar currículo &rarr;</a>
           </article>
 
-          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:col-span-2 lg:col-span-1">
-            <h3 class="text-xl font-bold text-slate-900">Comunidade</h3>
-            <p class="mt-2 text-sm text-slate-600">Leia experiências de quem transformou a carreira através da educação.</p>
-            <a href="#comunidade" class="mt-4 inline-block text-sm font-semibold text-primary">Ver depoimentos &rarr;</a>
+          <article class="cartao cartao-atalho cartao-atalho-largo">
+            <h2 class="cartao-atalho-titulo">Comunidade</h2>
+            <p class="cartao-atalho-texto">Leia experiências de quem transformou a carreira através da educação.</p>
+            <a href="#secao-comunidade" class="cartao-atalho-link">Ver depoimentos &rarr;</a>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ===================== CURSOS & EDUCAÇÃO ===================== -->
-    <section id="educacao" class="border-t border-slate-200 py-12">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Encontre um curso para o seu momento</h2>
-        <p class="mt-2 text-slate-600">Filtre as opções e dê o próximo passo na sua carreira.</p>
+    <!-- ===================== CURSOS ===================== -->
+    <section id="secao-cursos" class="secao-pagina">
+      <div class="container">
 
-        <!-- Filtros Visuais -->
-        <div class="mt-6 flex flex-wrap gap-3">
-          <input type="text" placeholder="Buscar curso..." class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900 focus:border-primary focus:outline-none">
-          <select class="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm text-slate-700">
+        <h2 class="titulo-secao">Encontre um curso para o seu momento</h2>
+        <p class="subtitulo-secao">Filtre as opções e dê o próximo passo na sua carreira.</p>
+
+        <!-- Filtros (apenas visuais).
+             FUTURO (JavaScript): filtrar a lista de cursos pela busca e pela área -->
+        <div id="filtros-cursos" class="filtros-cursos">
+          <label for="busca-curso" class="somente-leitor-de-tela">Buscar curso</label>
+          <input type="text" id="busca-curso" class="filtro-campo" placeholder="Buscar curso...">
+
+          <label for="filtro-area" class="somente-leitor-de-tela">Área do curso</label>
+          <select id="filtro-area" class="filtro-campo filtro-area">
             <option>Todas as Áreas</option>
             <option>Tecnologia</option>
             <option>Gestão &amp; Negócios</option>
@@ -116,222 +103,286 @@
           </select>
         </div>
 
-        <!-- Lista de Cursos -->
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <div class="p-6">
-              <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-primary">Tecnologia</span>
-              <h3 class="mt-3 text-lg font-bold text-slate-900">Lógica de Programação</h3>
-              <p class="mt-2 text-sm text-slate-600">Aprenda os conceitos fundamentais para iniciar na área de desenvolvimento de software.</p>
-              <div class="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-medium text-slate-500">
-                <span>Duração: 40h</span>
-                <span class="font-bold text-emerald-600">Gratuito</span>
-              </div>
-            </div>
-          </div>
+        <!-- Lista de cursos -->
+        <div id="lista-cursos" class="grade-cartoes lista-cursos">
 
-          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <div class="p-6">
-              <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">Gestão</span>
-              <h3 class="mt-3 text-lg font-bold text-slate-900">Gestão Financeira Pessoal</h3>
-              <p class="mt-2 text-sm text-slate-600">Aprenda a organizar suas finanças, orçamentos e planejar investimentos futuros.</p>
-              <div class="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-medium text-slate-500">
-                <span>Duração: 20h</span>
-                <span class="font-bold text-emerald-600">Gratuito</span>
-              </div>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-tecnologia">Tecnologia</span>
+            <h3 class="cartao-curso-titulo">Lógica de Programação</h3>
+            <p class="cartao-curso-texto">Aprenda os conceitos fundamentais para iniciar na área de desenvolvimento de software.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 40h</span>
+              <span class="curso-preco">Gratuito</span>
             </div>
-          </div>
+          </article>
 
-          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <div class="p-6">
-              <span class="rounded-full bg-purple-100 px-3 py-1 text-xs font-bold text-purple-700">Idiomas</span>
-              <h3 class="mt-3 text-lg font-bold text-slate-900">Inglês Profissional Básico</h3>
-              <p class="mt-2 text-sm text-slate-600">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
-              <div class="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-medium text-slate-500">
-                <span>Duração: 60h</span>
-                <span class="font-bold text-emerald-600">Gratuito</span>
-              </div>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-gestao">Gestão</span>
+            <h3 class="cartao-curso-titulo">Gestão Financeira Pessoal</h3>
+            <p class="cartao-curso-texto">Aprenda a organizar suas finanças, orçamentos e planejar investimentos futuros.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 20h</span>
+              <span class="curso-preco">Gratuito</span>
             </div>
-          </div>
+          </article>
+
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-idiomas">Idiomas</span>
+            <h3 class="cartao-curso-titulo">Inglês Profissional Básico</h3>
+            <p class="cartao-curso-texto">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 60h</span>
+              <span class="curso-preco">Gratuito</span>
+            </div>
+          </article>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-idiomas">Idiomas</span>
+            <h3 class="cartao-curso-titulo">Inglês Profissional Básico</h3>
+            <p class="cartao-curso-texto">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 60h</span>
+              <span class="curso-preco">Gratuito</span>
+            </div>
+          </article>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-idiomas">Idiomas</span>
+            <h3 class="cartao-curso-titulo">Inglês Profissional Básico</h3>
+            <p class="cartao-curso-texto">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 60h</span>
+              <span class="curso-preco">Gratuito</span>
+            </div>
+          </article>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-idiomas">Idiomas</span>
+            <h3 class="cartao-curso-titulo">Inglês Profissional Básico</h3>
+            <p class="cartao-curso-texto">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 60h</span>
+              <span class="curso-preco">Gratuito</span>
+            </div>
+          </article>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-idiomas">Idiomas</span>
+            <h3 class="cartao-curso-titulo">Inglês Profissional Básico</h3>
+            <p class="cartao-curso-texto">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 60h</span>
+              <span class="curso-preco">Gratuito</span>
+            </div>
+          </article>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-idiomas">Idiomas</span>
+            <h3 class="cartao-curso-titulo">Inglês Profissional Básico</h3>
+            <p class="cartao-curso-texto">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 60h</span>
+              <span class="curso-preco">Gratuito</span>
+            </div>
+          </article>
+          <article class="cartao cartao-curso">
+            <span class="etiqueta-area etiqueta-idiomas">Idiomas</span>
+            <h3 class="cartao-curso-titulo">Inglês Profissional Básico</h3>
+            <p class="cartao-curso-texto">Aprenda vocabulário prático para entrevistas de emprego e ambiente de trabalho.</p>
+            <div class="cartao-curso-rodape">
+              <span>Duração: 60h</span>
+              <span class="curso-preco">Gratuito</span>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
     <!-- ===================== GERADOR DE CURRÍCULO ===================== -->
-    <section id="empregabilidade" class="border-t border-slate-200 py-12">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Empregabilidade &amp; Carreira</h2>
-        <p class="mt-2 text-slate-600">Preencha seus dados para gerar a pré-visualização do seu currículo em tempo real.</p>
+    <section id="secao-curriculo" class="secao-pagina">
+      <div class="container">
 
-        <div class="mt-8 grid items-start gap-8 lg:grid-cols-2">
-          <!-- Formulário -->
-          <form id="cv-form" class="space-y-4" onsubmit="return false;">
+        <h2 class="titulo-secao">Empregabilidade &amp; Carreira</h2>
+        <p class="subtitulo-secao">Preencha seus dados para gerar a pré-visualização do seu currículo em tempo real.</p>
 
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-4">
-              <h3 class="font-bold text-lg text-slate-900 border-b pb-2">1. Dados Pessoais &amp; Contato</h3>
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div class="sm:col-span-2">
-                  <label for="cv-nome" class="mb-1 block text-sm font-semibold text-slate-900">Nome completo</label>
-                  <input type="text" id="cv-nome" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: Mariana Silva Oliveira">
+        <div class="curriculo-colunas">
+
+          <!-- COLUNA 1: formulário.
+               FUTURO (JavaScript): copiar o que for digitado para a pré-visualização ao lado -->
+          <form id="formulario-curriculo" class="formulario-curriculo">
+
+            <div class="grupo-formulario">
+              <h3 class="grupo-formulario-titulo">1. Dados Pessoais &amp; Contato</h3>
+              <div class="grade-campos">
+                <div class="campo-linha-inteira">
+                  <label for="cv-nome" class="campo-rotulo">Nome completo</label>
+                  <input type="text" id="cv-nome" class="campo-texto" placeholder="Ex: Mariana Silva Oliveira">
                 </div>
-                <div class="sm:col-span-2">
-                  <label for="cv-cargo" class="mb-1 block text-sm font-semibold text-slate-900">Título profissional</label>
-                  <input type="text" id="cv-cargo" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: Assistente Administrativa">
-                </div>
-                <div>
-                  <label for="cv-email" class="mb-1 block text-sm font-semibold text-slate-900">E-mail</label>
-                  <input type="email" id="cv-email" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: mariana@email.com">
-                </div>
-                <div>
-                  <label for="cv-telefone" class="mb-1 block text-sm font-semibold text-slate-900">Telefone</label>
-                  <input type="tel" id="cv-telefone" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: (11) 98765-4321">
+                <div class="campo-linha-inteira">
+                  <label for="cv-cargo" class="campo-rotulo">Título profissional</label>
+                  <input type="text" id="cv-cargo" class="campo-texto" placeholder="Ex: Assistente Administrativa">
                 </div>
                 <div>
-                  <label for="cv-cidade" class="mb-1 block text-sm font-semibold text-slate-900">Cidade / Estado</label>
-                  <input type="text" id="cv-cidade" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: São Paulo, SP">
+                  <label for="cv-email" class="campo-rotulo">E-mail</label>
+                  <input type="email" id="cv-email" class="campo-texto" placeholder="Ex: mariana@email.com">
                 </div>
                 <div>
-                  <label for="cv-linkedin" class="mb-1 block text-sm font-semibold text-slate-900">LinkedIn</label>
-                  <input type="text" id="cv-linkedin" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: linkedin.com/in/perfil">
+                  <label for="cv-telefone" class="campo-rotulo">Telefone</label>
+                  <input type="tel" id="cv-telefone" class="campo-texto" placeholder="Ex: (11) 98765-4321">
+                </div>
+                <div>
+                  <label for="cv-cidade" class="campo-rotulo">Cidade / Estado</label>
+                  <input type="text" id="cv-cidade" class="campo-texto" placeholder="Ex: São Paulo, SP">
+                </div>
+                <div>
+                  <label for="cv-linkedin" class="campo-rotulo">LinkedIn</label>
+                  <input type="text" id="cv-linkedin" class="campo-texto" placeholder="Ex: linkedin.com/in/perfil">
                 </div>
               </div>
             </div>
 
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-4">
-              <h3 class="font-bold text-lg text-slate-900 border-b pb-2">2. Objetivo Profissional</h3>
-              <textarea id="cv-objetivo" rows="3" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Descreva brevemente suas metas de carreira..."></textarea>
-            </div>
-
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-4">
-              <h3 class="font-bold text-lg text-slate-900 border-b pb-2">3. Formação &amp; Experiência</h3>
+            <div class="grupo-formulario">
+              <h3 class="grupo-formulario-titulo">2. Objetivo Profissional</h3>
               <div>
-                <label for="cv-formacao" class="mb-1 block text-sm font-semibold text-slate-900">Curso / Formação</label>
-                <input type="text" id="cv-formacao" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: Ensino Médio Completo - E.E. Maria Helena (2021-2023)">
-              </div>
-              <div>
-                <label for="cv-experiencia" class="mb-1 block text-sm font-semibold text-slate-900">Última Experiência</label>
-                <input type="text" id="cv-experiencia" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: Jovem Aprendiz - Empresa X (2023-2024)">
-              </div>
-              <div>
-                <label for="cv-cursos" class="mb-1 block text-sm font-semibold text-slate-900">Cursos concluídos no Educa+</label>
-                <textarea id="cv-cursos" rows="2" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: Gestão Financeira Básica (20h), Comunicação Assertiva (12h)"></textarea>
+                <label for="cv-objetivo" class="somente-leitor-de-tela">Objetivo profissional</label>
+                <textarea id="cv-objetivo" rows="3" class="campo-texto" placeholder="Descreva brevemente suas metas de carreira..."></textarea>
               </div>
             </div>
 
-            <button type="button" id="btn-gerar-cv" class="w-full rounded-xl bg-primary px-5 py-3.5 text-base font-semibold text-white transition-colors hover:bg-blue-700">
+            <div class="grupo-formulario">
+              <h3 class="grupo-formulario-titulo">3. Formação &amp; Experiência</h3>
+              <div>
+                <label for="cv-formacao" class="campo-rotulo">Curso / Formação</label>
+                <input type="text" id="cv-formacao" class="campo-texto" placeholder="Ex: Ensino Médio Completo - E.E. Maria Helena (2021-2023)">
+              </div>
+              <div>
+                <label for="cv-experiencia" class="campo-rotulo">Última Experiência</label>
+                <input type="text" id="cv-experiencia" class="campo-texto" placeholder="Ex: Jovem Aprendiz - Empresa X (2023-2024)">
+              </div>
+              <div>
+                <label for="cv-cursos" class="campo-rotulo">Cursos concluídos no Educa+</label>
+                <textarea id="cv-cursos" rows="2" class="campo-texto" placeholder="Ex: Gestão Financeira Básica (20h), Comunicação Assertiva (12h)"></textarea>
+              </div>
+            </div>
+
+            <!-- FUTURO (JavaScript): atualizar a pré-visualização ao clicar -->
+            <button type="button" id="botao-gerar-curriculo" class="botao-principal botao-gerar-curriculo">
               Gerar / Atualizar Currículo
             </button>
+
           </form>
 
-          <!-- Preview Dinâmico do Currículo -->
-          <div class="lg:sticky lg:top-24">
-            <div class="mb-3 flex items-center justify-between gap-2">
-              <p class="text-sm font-semibold text-slate-600">Pré-visualização do Modelo</p>
-              <button type="button" id="btn-imprimir-cv" class="rounded-xl border-2 border-primary bg-transparent px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-blue-50">
-                Imprimir
-              </button>
+          <!-- COLUNA 2: pré-visualização do currículo (textos de exemplo fixos por enquanto) -->
+          <div id="previa-curriculo" class="previa-curriculo">
+
+            <div class="previa-cabecalho">
+              <p class="previa-legenda">Pré-visualização do Modelo</p>
+              <!-- FUTURO (JavaScript): abrir a janela de impressão -->
+              <button type="button" id="botao-imprimir-curriculo" class="botao-contorno">Imprimir</button>
             </div>
 
-            <article id="cv-preview-card" class="min-h-[580px] rounded-lg border border-slate-200 bg-white p-8 shadow-xl sm:p-10">
-              <header class="border-b-2 border-primary pb-4">
-                <h3 id="preview-nome" class="text-2xl font-extrabold text-slate-900 sm:text-3xl">Seu Nome Aqui</h3>
-                <p id="preview-cargo" class="mt-1 font-semibold text-primary">Seu Cargo / Título</p>
-                <p id="preview-contato" class="mt-3 text-sm text-slate-600">email@exemplo.com | (00) 00000-0000 | Cidade, UF</p>
+            <article id="folha-curriculo" class="folha-curriculo">
+              <header class="folha-cabecalho">
+                <h3 id="previa-nome" class="folha-nome">Seu Nome Aqui</h3>
+                <p id="previa-cargo" class="folha-cargo">Seu Cargo / Título</p>
+                <p id="previa-contato" class="folha-contato">email@exemplo.com | (00) 00000-0000 | Cidade, UF</p>
               </header>
-              <section class="mt-5">
-                <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Objetivo Profissional</h4>
-                <p id="preview-objetivo" class="mt-1 text-sm leading-relaxed text-slate-700">Seu objetivo profissional aparecerá aqui conforme você preenche o formulário.</p>
+
+              <section class="folha-secao">
+                <h4 class="folha-secao-titulo">Objetivo Profissional</h4>
+                <p id="previa-objetivo" class="folha-secao-texto folha-secao-texto-longo">Seu objetivo profissional aparecerá aqui conforme você preenche o formulário.</p>
               </section>
-              <section class="mt-5">
-                <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Formação Acadêmica</h4>
-                <p id="preview-formacao" class="mt-1 text-sm text-slate-700">Sua formação acadêmica.</p>
+
+              <section class="folha-secao">
+                <h4 class="folha-secao-titulo">Formação Acadêmica</h4>
+                <p id="previa-formacao" class="folha-secao-texto">Sua formação acadêmica.</p>
               </section>
-              <section class="mt-5">
-                <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Experiência</h4>
-                <p id="preview-experiencia" class="mt-1 text-sm text-slate-700">Sua última experiência profissional.</p>
+
+              <section class="folha-secao">
+                <h4 class="folha-secao-titulo">Experiência</h4>
+                <p id="previa-experiencia" class="folha-secao-texto">Sua última experiência profissional.</p>
               </section>
-              <section class="mt-5">
-                <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-400">Cursos &amp; Capacitações</h4>
-                <p id="preview-cursos" class="mt-1 text-sm text-slate-700">Seus cursos concluídos.</p>
+
+              <section class="folha-secao">
+                <h4 class="folha-secao-titulo">Cursos &amp; Capacitações</h4>
+                <p id="previa-cursos" class="folha-secao-texto">Seus cursos concluídos.</p>
               </section>
             </article>
+
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ===================== COMUNIDADE & FEEDBACK ===================== -->
-    <section id="comunidade" class="border-t border-slate-200 py-12">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Comunidade &amp; Avaliações</h2>
-        <p class="mt-2 text-slate-600">Leia os depoimentos de quem participa do projeto e deixe sua avaliação.</p>
+    <!-- ===================== COMUNIDADE ===================== -->
+    <section id="secao-comunidade" class="secao-pagina">
+      <div class="container">
 
-        <div class="mt-8 grid gap-8 lg:grid-cols-2">
-          <!-- Lista de Avaliações -->
-          <div class="space-y-4">
-            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 font-bold text-primary">
-                  AM
-                </div>
+        <h2 class="titulo-secao">Comunidade &amp; Avaliações</h2>
+        <p class="subtitulo-secao">Leia os depoimentos de quem participa do projeto e deixe sua avaliação.</p>
+
+        <div class="comunidade-colunas">
+
+          <!-- COLUNA 1: lista de depoimentos -->
+          <div id="lista-depoimentos" class="lista-depoimentos">
+
+            <article class="cartao cartao-depoimento">
+              <div class="depoimento-autor">
+                <div class="avatar-depoimento avatar-cor-azul" aria-hidden="true">AM</div>
                 <div>
-                  <h4 class="font-bold text-slate-900">Ana Maria</h4>
-                  <span class="text-xs text-slate-500">Estudante</span>
+                  <h3 class="depoimento-nome">Ana Maria</h3>
+                  <span class="depoimento-perfil">Estudante</span>
                 </div>
               </div>
-              <p class="mt-3 text-sm text-slate-600">
+              <p class="depoimento-texto">
                 "Os cursos me ajudaram a montar meu primeiro currículo e consegui minha primeira entrevista de emprego!"
               </p>
             </article>
 
-            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 font-bold text-emerald-700">
-                  CR
-                </div>
+            <article class="cartao cartao-depoimento">
+              <div class="depoimento-autor">
+                <div class="avatar-depoimento avatar-cor-verde" aria-hidden="true">CR</div>
                 <div>
-                  <h4 class="font-bold text-slate-900">Carlos Roberto</h4>
-                  <span class="text-xs text-slate-500">Profissional em Transição</span>
+                  <h3 class="depoimento-nome">Carlos Roberto</h3>
+                  <span class="depoimento-perfil">Profissional em Transição</span>
                 </div>
               </div>
-              <p class="mt-3 text-sm text-slate-600">
+              <p class="depoimento-texto">
                 "Excelente iniciativa do ODS 4. O gerador de currículos simplificou muito o processo para mim."
               </p>
             </article>
+
           </div>
 
-          <!-- Formulário de Avaliação -->
-          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 class="text-lg font-bold text-slate-900">Deixe seu depoimento</h3>
-            <form class="mt-4 space-y-4" onsubmit="return false;">
+          <!-- COLUNA 2: formulário de avaliação.
+               FUTURO (JavaScript): validar os campos e adicionar o depoimento à lista -->
+          <div class="cartao cartao-avaliacao">
+            <h3 class="cartao-avaliacao-titulo">Deixe seu depoimento</h3>
+            <form id="formulario-avaliacao" class="formulario-avaliacao">
               <div>
-                <label for="feedback-nome" class="mb-1 block text-sm font-semibold text-slate-900">Seu Nome</label>
-                <input type="text" id="feedback-nome" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Ex: João da Silva">
+                <label for="avaliacao-nome" class="campo-rotulo">Seu Nome</label>
+                <input type="text" id="avaliacao-nome" class="campo-texto" placeholder="Ex: João da Silva">
               </div>
               <div>
-                <label for="feedback-mensagem" class="mb-1 block text-sm font-semibold text-slate-900">Mensagem / Avaliação</label>
-                <textarea id="feedback-mensagem" rows="4" class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none" placeholder="Conte como a plataforma te ajudou..."></textarea>
+                <label for="avaliacao-mensagem" class="campo-rotulo">Mensagem / Avaliação</label>
+                <textarea id="avaliacao-mensagem" rows="4" class="campo-texto" placeholder="Conte como a plataforma te ajudou..."></textarea>
               </div>
-              <button type="button" class="w-full rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700">
+              <button type="button" id="botao-enviar-avaliacao" class="botao-principal botao-enviar-avaliacao">
                 Enviar Avaliação
               </button>
             </form>
           </div>
+
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- Rodapé -->
-  <footer class="border-t border-slate-200 bg-white py-8">
-    <div class="mx-auto max-w-7xl px-4 text-center text-xs text-slate-500 sm:px-6">
-      <p>Projeto de Educação de Qualidade - ODS 4 &copy; Sprint 2</p>
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape-portal">
+    <div class="container">
+      <p class="rodape-texto">Projeto de Educação de Qualidade - ODS 4 &copy; Sprint 2</p>
     </div>
   </footer>
 
-  <!-- Scripts Externos (Prontos para serem ativados) -->
-  <script src="js/app.js"></script>
-  <script src="js/cv-generator.js"></script>
 </body>
 </html>

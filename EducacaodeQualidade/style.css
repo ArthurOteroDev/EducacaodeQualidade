@@ -1,0 +1,837 @@
+:root {
+  /* Cor principal do portal */
+  --cor-principal: #1d4ed8;
+  --cor-principal-escura: #1e3a8a;
+  --cor-principal-clara: #dbeafe;
+  --cor-principal-muito-clara: #eff6ff;
+
+  /* Tons de cinza usados em textos, bordas e fundos */
+  --cor-fundo-pagina: #f8fafc;
+  --cor-fundo-cartao: #ffffff;
+  --cor-texto-titulo: #0f172a;
+  --cor-texto-forte: #334155;
+  --cor-texto: #475569;
+  --cor-texto-suave: #64748b;
+  --cor-texto-apagado: #94a3b8;
+  --cor-borda: #e2e8f0;
+  --cor-borda-campo: #cbd5e1;
+  --cor-borda-clara: #f1f5f9;
+
+  /* Cores de apoio */
+  --cor-verde: #059669;
+  --cor-verde-escuro: #047857;
+  --cor-verde-claro: #d1fae5;
+  --cor-roxo: #7e22ce;
+  --cor-roxo-claro: #f3e8ff;
+
+  /* Medidas */
+  --largura-maxima: 80rem;
+  --sombra-pequena: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cor-fundo-pagina);
+  color: var(--cor-texto-titulo);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Caixa que centraliza o conteúdo e limita a largura */
+.container {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Texto visível apenas para leitores de tela */
+.somente-leitor-de-tela {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Contorno de foco para quem navega pelo teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cor-principal);
+  outline-offset: 2px;
+}
+
+
+.cabecalho-portal {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid var(--cor-borda);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.cabecalho-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.marca-portal {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.marca-simbolo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.marca-nome {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cor-texto-titulo);
+}
+
+.marca-descricao {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+}
+
+.menu-principal {
+  order: 3;
+  width: 100%;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.menu-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  transition: color 0.15s;
+}
+
+.menu-link:hover {
+  color: var(--cor-principal);
+}
+
+.botao-entrar {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cor-borda-campo);
+  border-radius: 0.75rem;
+  background-color: transparent;
+  color: var(--cor-texto-forte);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.botao-entrar:hover {
+  background-color: var(--cor-borda-clara);
+}
+
+
+.rodape-portal {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #ffffff;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.rodape-texto {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+}
+
+/* Usada pelas seções de cursos, currículo e comunidade */
+.secao-pagina {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--cor-borda);
+  height: 100vh;
+}
+
+/* Ao clicar no menu, a seção para abaixo do cabeçalho fixo */
+.secao-apresentacao,
+.secao-pagina {
+  scroll-margin-top: 8.5rem;
+}
+
+.titulo-secao {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 800;
+  color: var(--cor-texto-titulo);
+}
+
+.subtitulo-secao {
+  margin-top: 0.5rem;
+  color: var(--cor-texto);
+}
+
+/* Botão azul preenchido (ações principais dos formulários) */
+.botao-principal {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.botao-principal:hover {
+  background-color: #1e40af;
+}
+
+.botao-gerar-curriculo {
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+}
+
+.botao-enviar-avaliacao {
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Botão apenas com contorno azul (Imprimir) */
+.botao-contorno {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--cor-principal);
+  border-radius: 0.75rem;
+  background-color: transparent;
+  color: var(--cor-principal);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.botao-contorno:hover {
+  background-color: var(--cor-principal-muito-clara);
+}
+
+.campo-rotulo {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cor-texto-titulo);
+}
+
+.campo-texto {
+  display: block;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--cor-borda-campo);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: var(--cor-texto-titulo);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.campo-texto::placeholder {
+  color: var(--cor-texto-apagado);
+}
+
+.campo-texto:focus {
+  outline: none;
+  border-color: var(--cor-principal);
+}
+
+textarea.campo-texto {
+  resize: vertical;
+}
+
+
+/* Base usada por todos os cartões brancos do portal */
+.cartao {
+  background-color: var(--cor-fundo-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: 1rem;
+  box-shadow: var(--sombra-pequena);
+}
+
+/* Grade de cartões: 1 coluna no celular, 2 e 3 em telas maiores */
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+
+.secao-apresentacao {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.banner-apresentacao {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(to right, var(--cor-principal-escura), var(--cor-principal));
+  color: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.banner-conteudo {
+  max-width: 42rem;
+}
+
+.banner-etiqueta {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(59, 130, 246, 0.3);
+  color: var(--cor-principal-clara);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.banner-titulo {
+  margin-top: 1rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 900;
+}
+
+.banner-texto {
+  margin-top: 1rem;
+  color: var(--cor-principal-clara);
+}
+
+.banner-botoes {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.botao-banner-principal {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  color: var(--cor-principal);
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s;
+}
+
+.botao-banner-principal:hover {
+  transform: scale(1.05);
+}
+
+.botao-banner-secundario {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.botao-banner-secundario:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.atalhos-portal {
+  margin-top: 2.5rem;
+}
+
+.cartao-atalho {
+  padding: 1.5rem;
+}
+
+.cartao-atalho-titulo {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-texto-titulo);
+}
+
+.cartao-atalho-texto {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--cor-texto);
+}
+
+.cartao-atalho-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cor-principal);
+}
+
+.cartao-atalho-link:hover {
+  text-decoration: underline;
+}
+
+
+.filtros-cursos {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filtro-campo {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--cor-borda-campo);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: var(--cor-texto-titulo);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.filtro-campo:focus {
+  outline: none;
+  border-color: var(--cor-principal);
+}
+
+.filtro-area {
+  color: var(--cor-texto-forte);
+}
+
+.lista-cursos {
+  margin-top: 2rem;
+}
+
+.cartao-curso {
+  padding: 1.5rem;
+}
+
+/* Etiqueta com a área do curso */
+.etiqueta-area {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.etiqueta-tecnologia {
+  background-color: var(--cor-principal-clara);
+  color: var(--cor-principal);
+}
+
+.etiqueta-gestao {
+  background-color: var(--cor-verde-claro);
+  color: var(--cor-verde-escuro);
+}
+
+.etiqueta-idiomas {
+  background-color: var(--cor-roxo-claro);
+  color: var(--cor-roxo);
+}
+
+.cartao-curso-titulo {
+  margin-top: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-texto-titulo);
+}
+
+.cartao-curso-texto {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--cor-texto);
+}
+
+.cartao-curso-rodape {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cor-borda-clara);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+}
+
+.curso-preco {
+  font-weight: 700;
+  color: var(--cor-verde);
+}
+
+/* Duas colunas: formulário e pré-visualização (1 coluna no celular) */
+.curriculo-colunas {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 2rem;
+}
+
+.formulario-curriculo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Cada bloco numerado do formulário */
+.grupo-formulario {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--cor-borda);
+  background-color: #ffffff;
+}
+
+.grupo-formulario-titulo {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-texto-titulo);
+}
+
+.grade-campos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Cabeçalho acima da folha: texto + botão Imprimir */
+.previa-cabecalho {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.previa-legenda {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+/* A "folha" do currículo */
+.folha-curriculo {
+  min-height: 580px;
+  padding: 2rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.folha-cabecalho {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--cor-principal);
+}
+
+.folha-nome {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 800;
+  color: var(--cor-texto-titulo);
+}
+
+.folha-cargo {
+  margin-top: 0.25rem;
+  font-weight: 600;
+  color: var(--cor-principal);
+}
+
+.folha-contato {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--cor-texto);
+}
+
+.folha-secao {
+  margin-top: 1.25rem;
+}
+
+.folha-secao-titulo {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cor-texto-apagado);
+}
+
+.folha-secao-texto {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--cor-texto-forte);
+}
+
+.folha-secao-texto-longo {
+  line-height: 1.625;
+}
+
+
+.comunidade-colunas {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.lista-depoimentos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cartao-depoimento {
+  padding: 1.5rem;
+}
+
+.depoimento-autor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Círculo com as iniciais da pessoa */
+.avatar-depoimento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.avatar-cor-azul {
+  background-color: var(--cor-principal-clara);
+  color: var(--cor-principal);
+}
+
+.avatar-cor-verde {
+  background-color: var(--cor-verde-claro);
+  color: var(--cor-verde-escuro);
+}
+
+.depoimento-nome {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cor-texto-titulo);
+}
+
+.depoimento-perfil {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+}
+
+.depoimento-texto {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--cor-texto);
+}
+
+.cartao-avaliacao {
+  padding: 1.5rem;
+}
+
+.cartao-avaliacao-titulo {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-texto-titulo);
+}
+
+.formulario-avaliacao {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Os campos deste formulário são um pouco mais baixos */
+.formulario-avaliacao .campo-texto {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+
+/* ----------------------------------------------------------
+   13. RESPONSIVIDADE (TELAS MAIORES)
+   O CSS acima é o do celular. Aqui ajustamos para telas maiores.
+   ---------------------------------------------------------- */
+
+/* A partir de 640px (celular grande / tablet em pé) */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .titulo-secao {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .banner-titulo {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .banner-texto {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .grade-cartoes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* O terceiro atalho ocupa a linha inteira enquanto há 2 colunas */
+  .cartao-atalho-largo {
+    grid-column: span 2;
+  }
+
+  .grade-campos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campo-linha-inteira {
+    grid-column: span 2;
+  }
+
+  .folha-curriculo {
+    padding: 2.5rem;
+  }
+
+  .folha-nome {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+/* A partir de 768px (tablet deitado): menu na mesma linha da marca */
+@media (min-width: 768px) {
+  .menu-principal {
+    order: 0;
+    width: auto;
+    margin-top: 0;
+    gap: 2rem;
+  }
+
+  /* O cabeçalho fica mais baixo, então a margem de rolagem diminui */
+  .secao-apresentacao,
+  .secao-pagina {
+    scroll-margin-top: 4.5rem;
+  }
+
+  .secao-apresentacao {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .banner-apresentacao {
+    padding: 3rem;
+  }
+}
+
+/* A partir de 1024px (notebook / desktop) */
+@media (min-width: 1024px) {
+  .grade-cartoes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cartao-atalho-largo {
+    grid-column: auto;
+  }
+
+  .curriculo-colunas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .comunidade-colunas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* A pré-visualização acompanha a rolagem da página */
+  .previa-curriculo {
+    position: sticky;
+    top: 6rem;
+  }
+}
+
+/* Respeita quem prefere menos movimento na tela */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
